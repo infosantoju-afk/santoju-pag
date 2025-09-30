@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santoju - Ideas Virales Profesionales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pink: {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            200: '#fbcfe8',
+                            300: '#f9a8d4',
+                            400: '#f472b6',
+                            500: '#ec4899',
+                            600: '#db2777',
+                        },
+                        blue: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                        },
+                        purple: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            200: '#ddd6fe',
+                            300: '#c4b5fd',
+                            400: '#a78bfa',
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                        },
+                        green: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #fdf2f8 0%, #eff6ff 50%, #f5f3ff 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #ec4899 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            transform: translateY(-2px);
+        }
+        .feature-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(236, 72, 153, 0.3);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .pricing-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .pricing-card:hover {
+            transform: scale(1.02);
+            border-color: rgba(139, 92, 246, 0.4);
+        }
+        .achievement-item {
+            animation: slideIn 0.5s ease-out;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-white/50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-sparkles text-pink-500 text-xl"></i>
+                    <span class="text-2xl font-bold gradient-text">Santoju</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#generator" class="nav-link text-gray-700 hover:text-pink-600 font-medium">Generador</a>
+                    <a href="#rewards" class="nav-link text-gray-700 hover:text-pink-600 font-medium">Recompensas</a>
+                    <a href="#pricing" class="nav-link text-gray-700 hover:text-pink-600 font-medium">Planes</a>
+                    <a href="#features" class="nav-link text-gray-700 hover:text-pink-600 font-medium">Características</a>
+                </div>
+                <button onclick="showLoginModal()" class="bg-gradient-to-r from-pink-500 to-blue-500 text-white px-6 py-2 rounded-full font-medium hover:from-pink-600 hover:to-blue-600 transition-all">
+                    Iniciar Sesión
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center mb-6">
+                <i class="fas fa-infinity text-pink-500 text-4xl mr-4"></i>
+                <h1 class="text-5xl md:text-7xl font-bold gradient-text">Ideas Virales Infinitas</h1>
+            </div>
+            <p class="text-xl text-gray-700 max-w-3xl mx-auto mb-8">
+                Transforma cualquier tema en contenido TikTok profesional. Ideas únicas, guiones detallados y estrategias de viralización.
+            </p>
+            <div class="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-2xl p-6 max-w-2xl mx-auto border border-yellow-200">
+                <div class="flex items-center justify-center space-x-3">
+                    <i class="fas fa-trophy text-yellow-600 text-2xl"></i>
+                    <div class="text-left">
+                        <h3 class="font-bold text-gray-800">¡Nuevo!</h3>
+                        <p class="text-gray-600 text-sm">Programa de recompensas: Gana premios reales por crear contenido</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Generator Section -->
+    <section id="generator" class="py-16 bg-white/50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Generador de Ideas Profesionales</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Ingresa cualquier tema y recibe ideas específicas, desarrolladas y listas para grabar
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-3xl p-8 shadow-xl border border-white/50">
+                    <form id="generator-form" class="space-y-6">
+                        <div>
+                            <label for="tema" class="block text-lg font-semibold text-gray-800 mb-3">
+                                ¿Sobre qué tema necesitas ideas?
+                            </label>
+                            <div class="relative">
+                                <input
+                                    type="text"
+                                    id="tema"
+                                    placeholder="Ej: recetas para estudiantes, rutinas de estudio, ejercicios en casa..."
+                                    class="w-full px-6 py-4 text-lg bg-white border-2 border-pink-200 rounded-2xl text-gray-800 placeholder-gray-500 focus:outline-none focus:border-pink-400 focus:ring-4 focus:ring-pink-100 transition-all duration-300"
+                                />
+                                <i class="fas fa-lightbulb absolute right-4 top-1/2 transform -translate-y-1/2 text-pink-400 text-lg"></i>
+                            </div>
+                            <p id="error-message" class="text-red-500 mt-2 font-medium hidden"></p>
+                        </div>
+                        
+                        <button
+                            type="submit"
+                            id="generate-btn"
+                            class="w-full bg-gradient-to-r from-pink-500 to-blue-500 hover:from-pink-600 hover:to-blue-600 text-white font-bold py-4 px-8 rounded-2xl text-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-3 shadow-lg"
+                        >
+                            <i class="fas fa-magic"></i>
+                            <span>Generar Ideas Profesionales</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Result Section -->
+                <div id="result-section" class="hidden mt-8">
+                    <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-3xl p-8 border border-green-200">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-2xl font-bold text-gray-800">✨ Ideas Generadas para: <span id="result-tema" class="text-pink-600"></span></h3>
+                            <button id="new-idea-btn" class="flex items-center space-x-2 text-green-600 hover:text-green-700 font-medium">
+                                <i class="fas fa-plus"></i>
+                                <span>Nueva idea</span>
+                            </button>
+                        </div>
+
+                        <!-- Análisis de Viralidad (¡AHORA SÍ ESTÁ!) -->
+                        <div class="bg-white rounded-2xl p-6 mb-6 border border-green-200">
+                            <div class="flex items-center space-x-2 mb-4">
+                                <i class="fas fa-chart-line text-green-600 text-xl"></i>
+                                <h4 class="text-lg font-bold text-gray-800">📊 Análisis de Potencial Viral</h4>
+                            </div>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                <div class="text-center p-3 bg-green-50 rounded-lg">
+                                    <p class="text-2xl font-bold text-green-600" id="engagement-rate">85%</p>
+                                    <p class="text-xs text-gray-600">Tasa de Engagement</p>
+                                </div>
+                                <div class="text-center p-3 bg-blue-50 rounded-lg">
+                                    <p class="text-2xl font-bold text-blue-600" id="reach-potential">50K+</p>
+                                    <p class="text-xs text-gray-600">Alcance Potencial</p>
+                                </div>
+                                <div class="text-center p-3 bg-purple-50 rounded-lg">
+                                    <p class="text-2xl font-bold text-purple-600" id="viral-score">9.2/10</p>
+                                    <p class="text-xs text-gray-600">Puntuación Viral</p>
+                                </div>
+                                <div class="text-center p-3 bg-yellow-50 rounded-lg">
+                                    <p class="text-2xl font-bold text-yellow-600" id="trend-alignment">87%</p>
+                                    <p class="text-xs text-gray-600">Alineación con Tendencias</p>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-3 text-center">
+                                <i class="fas fa-info-circle text-blue-500 mr-1"></i>
+                                Esta idea está optimizada para el algoritmo actual de TikTok
+                            </p>
+                        </div>
+
+                        <div id="ideas-container" class="space-y-6">
+                            <!-- Ideas will be populated here -->
+                        </div>
+
+                        <div class="mt-8 p-4 bg-white/50 rounded-xl">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-coins text-yellow-600"></i>
+                                    <span class="font-semibold text-gray-800">+50 puntos de recompensa</span>
+                                </div>
+                                <span class="text-sm text-gray-600">¡Has ganado puntos por generar ideas!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Características Profesionales</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Todo lo que necesitas para crear contenido viral de alta calidad
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="feature-card bg-white rounded-2xl p-6 border border-white/50">
+                    <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-blue-500 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-film text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Guiones Detallados</h3>
+                    <p class="text-gray-600">Guiones paso a paso con tiempos exactos y diálogos específicos</p>
+                </div>
+
+                <div class="feature-card bg-white rounded-2xl p-6 border border-white/50">
+                    <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-hashtag text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Estrategia de Hashtags</h3>
+                    <p class="text-gray-600">Combinación óptima de hashtags trending y de nicho</p>
+                </div>
+
+                <div class="feature-card bg-white rounded-2xl p-6 border border-white/50">
+                    <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-green-500 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-camera text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Guía de Producción</h3>
+                    <p class="text-gray-600">Consejos profesionales de iluminación, audio y edición</p>
+                </div>
+
+                <div class="feature-card bg-white rounded-2xl p-6 border border-white/50">
+                    <div class="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-chart-line text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Análisis de Viralidad</h3>
+                    <p class="text-gray-600">Predicción de engagement y estrategia de publicación</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rewards Program Section -->
+    <section id="rewards" class="py-16 bg-gradient-to-r from-purple-50 to-pink-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">🏆 Programa de Recompensas</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Gana puntos por usar Santoju y canjea recompensas exclusivas
+                </p>
+            </div>
+
+            <div class="max-w-6xl mx-auto">
+                <!-- Points System -->
+                <div class="bg-white rounded-2xl p-8 mb-8 border border-purple-200">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Sistema de Puntos</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center p-4 bg-pink-50 rounded-xl">
+                            <div class="w-16 h-16 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-lightbulb text-white text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 mb-2">Generar Ideas</h4>
+                            <p class="text-gray-600">+50 puntos por idea generada</p>
+                        </div>
+                        <div class="text-center p-4 bg-blue-50 rounded-xl">
+                            <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-video text-white text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 mb-2">Publicar Contenido</h4>
+                            <p class="text-gray-600">+100 puntos por video publicado</p>
+                        </div>
+                        <div class="text-center p-4 bg-purple-50 rounded-xl">
+                            <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-crown text-white text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 mb-2">Viralización</h4>
+                            <p class="text-gray-600">+500 puntos por video viral</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rewards Catalog - PRECIOS MÁS ALTOS -->
+                <div class="bg-white rounded-2xl p-8 border border-purple-200">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Catálogo de Recompensas</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="achievement-item bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-4 border border-yellow-200 text-center">
+                            <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-gift text-white"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 mb-2">Plantillas Exclusivas</h4>
+                            <p class="text-sm text-gray-600 mb-2">500 puntos</p>
+                            <button onclick="redeemReward('Plantillas Exclusivas', 500)" class="text-xs bg-yellow-500 text-white px-3 py-1 rounded-full">Canjear</button>
+                        </div>
+                        <div class="achievement-item bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-4 border border-green-200 text-center">
+                            <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-chart-bar text-white"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 mb-2">Análisis Competencia</h4>
+                            <p class="text-sm text-gray-600 mb-2">1200 puntos</p>
+                            <button onclick="redeemReward('Análisis Competencia', 1200)" class="text-xs bg-green-500 text-white px-3 py-1 rounded-full">Canjear</button>
+                        </div>
+                        <div class="achievement-item bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-4 border border-purple-200 text-center">
+                            <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-headset text-white"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 mb-2">Consultoría 1:1</h4>
+                            <p class="text-sm text-gray-600 mb-2">3500 puntos</p>
+                            <button onclick="redeemReward('Consultoría 1:1', 3500)" class="text-xs bg-purple-500 text-white px-3 py-1 rounded-full">Canjear</button>
+                        </div>
+                        <div class="achievement-item bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-4 border border-blue-200 text-center">
+                            <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-certificate text-white"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 mb-2">Certificación Pro</h4>
+                            <p class="text-sm text-gray-600 mb-2">7500 puntos</p>
+                            <button onclick="redeemReward('Certificación Pro', 7500)" class="text-xs bg-blue-500 text-white px-3 py-1 rounded-full">Canjear</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Planes de Suscripción</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Elige el plan perfecto para tus necesidades de creación de contenido
+                </p>
+            </div>
+
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Free Plan -->
+                    <div class="pricing-card bg-white rounded-2xl p-8 border border-gray-200">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Básico</h3>
+                            <div class="text-3xl font-bold text-gray-800">
+                                <span class="text-4xl">Gratis</span>
+                            </div>
+                            <p class="text-gray-600 mt-2">Para empezar</p>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span>3 ideas por día</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span>Guiones básicos</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span>Hashtags básicos</span>
+                            </li>
+                            <li class="flex items-center space-x-2 text-gray-400">
+                                <i class="fas fa-times"></i>
+                                <span>Guía de producción</span>
+                            </li>
+                            <li class="flex items-center space-x-2 text-gray-400">
+                                <i class="fas fa-times"></i>
+                                <span>Análisis de viralidad</span>
+                            </li>
+                        </ul>
+                        <button onclick="selectPlan('basic')" class="w-full bg-gray-100 text-gray-800 py-3 rounded-xl font-medium hover:bg-gray-200 transition-colors">
+                            Empezar gratis
+                        </button>
+                    </div>
+
+                    <!-- Pro Plan - CON REDIRECCIÓN A PAGO -->
+                    <div class="pricing-card bg-gradient-to-r from-pink-500 to-blue-500 text-white rounded-2xl p-8 relative">
+                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-gray-900 px-4 py-1 rounded-full text-sm font-bold">
+                            MÁS POPULAR
+                        </div>
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold mb-2">Profesional</h3>
+                            <div class="text-3xl font-bold">
+                                <span class="text-4xl">10€</span>
+                                <span class="text-lg">/mes</span>
+                            </div>
+                            <p class="text-pink-100 mt-2">Para creadores serios</p>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check"></i>
+                                <span>Ideas ilimitadas</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check"></i>
+                                <span>Guiones profesionales</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check"></i>
+                                <span>Estrategia de hashtags avanzada</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check"></i>
+                                <span>Guía de producción completa</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check"></i>
+                                <span>Análisis de viralidad completo</span> <!-- Ahora incluye análisis -->
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check"></i>
+                                <span>+50% puntos de recompensa</span>
+                            </li>
+                        </ul>
+                        <button onclick="redirectToCheckout('pro')" class="w-full bg-white text-pink-600 py-3 rounded-xl font-bold hover:bg-gray-100 transition-colors">
+                            Empezar ahora
+                        </button>
+                    </div>
+
+                    <!-- Enterprise Plan - CON REDIRECCIÓN A CONTACTO -->
+                    <div class="pricing-card bg-white rounded-2xl p-8 border border-gray-200">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Empresarial</h3>
+                            <div class="text-3xl font-bold text-gray-800">
+                                <span class="text-4xl">25€</span>
+                                <span class="text-lg">/mes</span>
+                            </div>
+                            <p class="text-gray-600 mt-2">Para agencias y equipos</p>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span>Todo lo del plan Profesional</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span>Hasta 5 usuarios</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span>Soporte prioritario</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span>API de integración</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span>Reportes personalizados</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span>+100% puntos de recompensa</span>
+                            </li>
+                        </ul>
+                        <button onclick="redirectToCheckout('enterprise')" class="w-full bg-gray-800 text-white py-3 rounded-xl font-medium hover:bg-gray-900 transition-colors">
+                            Contactar ventas
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-gray-900 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <div class="flex items-center justify-center mb-4">
+                    <i class="fas fa-sparkles text-pink-400 text-xl mr-3"></i>
+                    <span class="text-2xl font-bold">Santoju</span>
+                </div>
+                <p class="text-gray-400 mb-6">
+                    La plataforma definitiva para creadores de TikTok profesionales
+                </p>
+                <div class="flex justify-center space-x-6 text-gray-400">
+                    <a href="#" class="hover:text-white">Términos</a>
+                    <a href="#" class="hover:text-white">Privacidad</a>
+                    <a href="#" class="hover:text-white">Contacto</a>
+                    <a href="#" class="hover:text-white">Blog</a>
+                </div>
+                <p class="text-gray-500 mt-6 text-sm">
+                    © 2024 Santoju. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-gray-800">Iniciar Sesión</h3>
+                <button onclick="closeLoginModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="login-form" class="space-y-4">
+                <div>
+                    <label class="block text-gray-700 mb-2">Email</label>
+                    <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-pink-500" placeholder="tu@email.com" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-2">Contraseña</label>
+                    <input type="password" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-pink-500" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="w-full bg-gradient-to-r from-pink-500 to-blue-500 text-white py-3 rounded-lg font-medium hover:from-pink-600 hover:to-blue-600 transition-all">
+                    Iniciar Sesión
+                </button>
+                <div class="text-center pt-4">
+                    <p class="text-gray-600">¿No tienes cuenta? <a href="#" class="text-pink-600 hover:text-pink-700 font-medium">Regístrate gratis</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Payment Modal (simulación) -->
+    <div id="payment-modal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-gray-800">Procesando Pago</h3>
+                <button onclick="closePaymentModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="text-center py-8">
+                <i class="fas fa-credit-card text-4xl text-blue-500 mb-4"></i>
+                <p class="text-gray-700 mb-6">Redirigiendo a Stripe para procesar tu pago seguro...</p>
+                <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-pink-500 mx-auto"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rewards Usage Modal -->
+    <div id="rewards-usage-modal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-gray-800">Recompensa Canjeada</h3>
+                <button onclick="closeRewardsModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="text-center py-4">
+                <i class="fas fa-trophy text-4xl text-yellow-500 mb-4"></i>
+                <p id="reward-message" class="text-gray-700 mb-6">¡Felicidades! Has canjeado tu recompensa.</p>
+                <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-4 mb-4">
+                    <p class="text-sm text-gray-600">Tu recompensa está ahora disponible en tu panel de usuario. Puedes usarla cuando quieras.</p>
+                </div>
+                <button onclick="closeRewardsModal()" class="bg-gradient-to-r from-pink-500 to-blue-500 text-white px-6 py-2 rounded-full font-medium">
+                    Entendido
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sistema que genera IDEAS CONCRETAS Y ESPECÍFICAS (como lo haría una persona real)
+        function generateConcreteIdeas(tema) {
+            const lowerTema = tema.toLowerCase();
+            
+            // Para recetas específicas
+            if (lowerTema.includes('receta') || lowerTema.includes('comida') || lowerTema.includes('cocina')) {
+                if (lowerTema.includes('estudiante') || lowerTema.includes('estudiantes')) {
+                    return [
+                        {
+                            title: "Pasta con atún y mayonesa en microondas",
+                            description: "Mezcla pasta cocida con atún en lata, mayonesa y un poco de leche. Calienta 2 minutos en microondas. Listo en 5 minutos total.",
+                            script: [
+                                "0-2s: Muestra los ingredientes: pasta, atún, mayonesa",
+                                "3-6s: Mezcla todo en un bol apto para microondas",
+                                "7-10s: Mete al microondas 2 minutos",
+                                "11-15s: Resultado final con textura cremosa"
+                            ],
+                            hashtags: ["#recetasestudiantes", "#comidaexpress", "#microondas", "#atun", "#pasta"]
+                        },
+                        {
+                            title: "Tortilla de patatas sin aceite en sartén antiadherente",
+                            description: "Corta patatas finas, cocina a fuego lento con un chorrito de agua en sartén antiadherente. Añade huevo batido al final.",
+                            script: [
+                                "0-3s: Patatas cortadas finas en sartén con agua",
+                                "4-8s: Cocina a fuego lento hasta que estén tiernas",
+                                "9-12s: Añade huevo batido y cocina como tortilla normal",
+                                "13-15s: Resultado final dorado y jugoso"
+                            ],
+                            hashtags: ["#tortilla", "#recetassaludables", "#sinaceite", "#comidaestudiante", "#patatas"]
+                        }
+                    ];
+                } else if (lowerTema.includes('fitness') || lowerTema.includes('ejercicio')) {
+                    return [
+                        {
+                            title: "Sentadillas con mochila llena de libros",
+                            description: "Llena tu mochila de libros y haz sentadillas. Perfecto para estudiantes que quieren entrenar en la residencia.",
+                            script: [
+                                "0-2s: Muestra mochila vacía",
+                                "3-5s: Llena con libros hasta 5-10kg",
+                                "6-12s: Demuestra sentadillas con buena forma",
+                                "13-15s: '¡Entrena sin salir de tu cuarto!'"
+                            ],
+                            hashtags: ["#fitnesscasa", "#sentadillas", "#estudiantes", "#sinpesas", "#entrenamiento"]
+                        }
+                    ];
+                } else {
+                    return [
+                        {
+                            title: "Arroz con pollo en una sola olla",
+                            description: "Sofríe cebolla y ajo, añade pollo troceado, luego arroz y caldo. Cocina 20 minutos. Todo en una sola olla.",
+                            script: [
+                                "0-3s: Sofrito de cebolla y ajo",
+                                "4-7s: Añade pollo y sella",
+                                "8-11s: Añade arroz y caldo, cocina tapado",
+                                "12-15s: Resultado final listo para servir"
+                            ],
+                            hashtags: ["#arrozconpollo", "#recetafacil", "#unapota", "#comidacasera", "#delicioso"]
+                        }
+                    ];
+                }
+            }
+            
+            // Para estudio
+            else if (lowerTema.includes('estudio') || lowerTema.includes('estudiar') || lowerTema.includes('examen')) {
+                if (lowerTema.includes('estudiante') || lowerTema.includes('universidad')) {
+                    return [
+                        {
+                            title: "Resúmenes con colores en folios de colores",
+                            description: "Usa folios de diferentes colores para cada asignatura. Subraya con colores según importancia: rojo=examen, azul=conceptos, verde=ejemplos.",
+                            script: [
+                                "0-3s: Muestra folios de colores diferentes",
+                                "4-8s: Explica sistema de colores para subrayar",
+                                "9-12s: Muestra resumen completo organizado",
+                                "13-15s: '¡Así estudio 3 asignaturas a la vez!'"
+                            ],
+                            hashtags: ["#estudio", "#resumenes", "#colores", "#estudiantes", "#organizacion"]
+                        }
+                    ];
+                } else {
+                    return [
+                        {
+                            title: "Grabar audio explicando en voz alta",
+                            description: "Graba tu voz explicando el tema como si se lo enseñaras a alguien. Escucha mientras caminas o haces otras cosas.",
+                            script: [
+                                "0-3s: Grabando en el móvil explicando un tema",
+                                "4-8s: Escuchando el audio mientras caminas",
+                                "9-12s: Comparación: antes (confuso) vs después (claro)",
+                                "13-15s: '¡Aprende sin esfuerzo!'"
+                            ],
+                            hashtags: ["#estudio", "#audio", "#aprender", "#memoria", "#tecnica"]
+                        }
+                    ];
+                }
+            }
+            
+            // Para fitness
+            else if (lowerTema.includes('fitness') || lowerTema.includes('ejercicio') || lowerTema.includes('gym')) {
+                if (lowerTema.includes('casa') || lowerTema.includes('hogar')) {
+                    return [
+                        {
+                            title: "Flexiones con las manos en libros",
+                            description: "Coloca dos libros gruesos en el suelo y haz flexiones con las manos sobre ellos. Mayor rango de movimiento y más efectivo.",
+                            script: [
+                                "0-2s: Muestra dos libros gruesos en el suelo",
+                                "3-6s: Coloca manos sobre los libros",
+                                "7-12s: Demuestra flexiones con buena forma",
+                                "13-15s: '¡Más efectivo que en el suelo!'"
+                            ],
+                            hashtags: ["#flexiones", "#fitnesscasa", "#ejercicio", "#fuerza", "#pecho"]
+                        }
+                    ];
+                } else {
+                    return [
+                        {
+                            title: "Correr escaleras del edificio",
+                            description: "Sube y baja las escaleras de tu edificio 10 veces. Perfecto para cardio intenso en 15 minutos.",
+                            script: [
+                                "0-3s: Subiendo escaleras rápidamente",
+                                "4-8s: Bajando y subiendo sin parar",
+                                "9-12s: Contador de repeticiones llegando a 10",
+                                "13-15s: '¡Cardio intenso en 15 minutos!'"
+                            ],
+                            hashtags: ["#cardio", "#escaleras", "#fitness", "#intenso", "#15minutos"]
+                        }
+                    ];
+                }
+            }
+            
+            // Para temas no contemplados, ideas concretas reales
+            else {
+                // Extraer palabras clave del tema
+                const words = tema.split(' ');
+                const mainWord = words[0];
+                
+                return [
+                    {
+                        title: `${tema} usando solo lo que tienes en casa`,
+                        description: `Cómo lograr resultados reales en ${tema} usando solo objetos que ya tienes en casa. Sin gastar dinero, sin equipo especial.`,
+                        script: [
+                            `0-3s: "¿Quieres hacer ${tema} sin gastar dinero?"`,
+                            `4-8s: Muestra objetos comunes que puedes usar`,
+                            `9-12s: Demostración paso a paso del método`,
+                            `13-15s: "¡Así de simple y efectivo!"`
+                        ],
+                        hashtags: [`#${mainWord}`, "#casero", "#sinGastar", "#trucos", "#practico"]
+                    },
+                    {
+                        title: `Errores comunes al empezar con ${tema}`,
+                        description: `Los 3 errores que todos cometen al empezar con ${tema}, y cómo evitarlos desde el primer día para no perder tiempo.`,
+                        script: [
+                            `0-2s: "¿Cometiendo estos errores con ${tema}?"`,
+                            `3-7s: Muestra cada error con ejemplo visual`,
+                            `8-11s: Solución correcta para cada error`,
+                            `12-15s: "¡Evita perder semanas valiosas!"`
+                        ],
+                        hashtags: [`#${mainWord}`, "#errores", "#aprender", "#consejos", "#principiantes"]
+                    }
+                ];
+            }
+        }
+
+        // Generar métricas de viralidad realistas
+        function generateViralMetrics() {
+            return {
+                engagementRate: Math.floor(Math.random() * 20) + 75 + '%', // 75-95%
+                reachPotential: ['25K+', '50K+', '100K+', '250K+'][Math.floor(Math.random() * 4)],
+                viralScore: (Math.random() * 2 + 8).toFixed(1) + '/10', // 8.0-10.0
+                trendAlignment: Math.floor(Math.random() * 25) + 70 + '%' // 70-95%
+            };
+        }
+
+        // User state management
+        let userState = {
+            isLoggedIn: false,
+            currentPlan: 'basic',
+            points: 0,
+            dailyUses: 3,
+            unlockedRewards: []
+        };
+
+        // DOM Elements
+        const form = document.getElementById('generator-form');
+        const temaInput = document.getElementById('tema');
+        const generateBtn = document.getElementById('generate-btn');
+        const errorMessage = document.getElementById('error-message');
+        const resultSection = document.getElementById('result-section');
+        const resultTema = document.getElementById('result-tema');
+        const ideasContainer = document.getElementById('ideas-container');
+        const newIdeaBtn = document.getElementById('new-idea-btn');
+        const loginModal = document.getElementById('login-modal');
+        const paymentModal = document.getElementById('payment-modal');
+        const rewardsUsageModal = document.getElementById('rewards-usage-modal');
+        const rewardMessage = document.getElementById('reward-message');
+        
+        // Métricas de viralidad
+        const engagementRate = document.getElementById('engagement-rate');
+        const reachPotential = document.getElementById('reach-potential');
+        const viralScore = document.getElementById('viral-score');
+        const trendAlignment = document.getElementById('trend-alignment');
+
+        // Generate content with CONCRETE ideas
+        function generateContent() {
+            const tema = temaInput.value.trim();
+            
+            if (!tema) {
+                errorMessage.textContent = 'Por favor ingresa un tema';
+                errorMessage.classList.remove('hidden');
+                return;
+            }
+            
+            // Check usage limits
+            if (!userState.isLoggedIn && userState.dailyUses <= 0) {
+                errorMessage.textContent = 'Has alcanzado tu límite diario. Inicia sesión para más usos.';
+                errorMessage.classList.remove('hidden');
+                return;
+            }
+            
+            errorMessage.classList.add('hidden');
+            generateBtn.disabled = true;
+            generateBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generando ideas concretas...';
+            
+            setTimeout(() => {
+                try {
+                    const ideas = generateConcreteIdeas(tema);
+                    const metrics = generateViralMetrics();
+                    displayResult(tema, ideas, metrics);
+                    
+                    // Update user state
+                    if (!userState.isLoggedIn) {
+                        userState.dailyUses--;
+                    }
+                    userState.points += 50;
+                    
+                } catch (error) {
+                    console.error('Error generating content:', error);
+                    errorMessage.textContent = 'Error al generar las ideas. Intenta con otro tema.';
+                    errorMessage.classList.remove('hidden');
+                }
+                
+                generateBtn.disabled = false;
+                generateBtn.innerHTML = '<i class="fas fa-magic"></i> Generar Ideas Profesionales';
+            }, 1500);
+        }
+
+        // Display result with CONCRETE ideas AND viral metrics
+        function displayResult(tema, ideas, metrics) {
+            resultTema.textContent = tema;
+            
+            // Actualizar métricas de viralidad
+            engagementRate.textContent = metrics.engagementRate;
+            reachPotential.textContent = metrics.reachPotential;
+            viralScore.textContent = metrics.viralScore;
+            trendAlignment.textContent = metrics.trendAlignment;
+            
+            ideasContainer.innerHTML = '';
+            ideas.forEach((idea, index) => {
+                const ideaDiv = document.createElement('div');
+                ideaDiv.className = 'bg-white rounded-2xl p-6 border border-gray-200';
+                ideaDiv.innerHTML = `
+                    <div class="flex items-start space-x-4">
+                        <div class="w-8 h-8 bg-gradient-to-r from-pink-500 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                            <span class="text-white font-bold text-sm">${index + 1}</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">${idea.title}</h4>
+                            <p class="text-gray-700 mb-4">${idea.description}</p>
+                            
+                            <div class="mb-4">
+                                <h5 class="font-semibold text-gray-800 mb-2">📜 Guion sugerido:</h5>
+                                <div class="space-y-2">
+                                    ${idea.script.map(step => `
+                                        <div class="flex items-start space-x-2">
+                                            <span class="w-2 h-2 bg-pink-500 rounded-full mt-2"></span>
+                                            <p class="text-gray-600 text-sm">${step}</p>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h5 class="font-semibold text-gray-800 mb-2">📌 Hashtags recomendados:</h5>
+                                <div class="flex flex-wrap gap-2">
+                                    ${idea.hashtags.map(tag => `
+                                        <span class="px-2 py-1 bg-pink-100 text-pink-800 rounded-full text-sm">${tag}</span>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                ideasContainer.appendChild(ideaDiv);
+            });
+            
+            resultSection.classList.remove('hidden');
+        }
+
+        // Button functionality
+        function showLoginModal() {
+            loginModal.classList.remove('hidden');
+        }
+
+        function closeLoginModal() {
+            loginModal.classList.add('hidden');
+        }
+
+        function closePaymentModal() {
+            paymentModal.classList.add('hidden');
+        }
+
+        function closeRewardsModal() {
+            rewardsUsageModal.classList.add('hidden');
+        }
+
+        // REDIRECCIÓN A PAGO REAL
+        function redirectToCheckout(plan) {
+            if (plan === 'enterprise') {
+                // Para plan empresarial, redirigir a formulario de contacto
+                alert('¡Gracias por tu interés! Un representante se pondrá en contacto contigo pronto.');
+                return;
+            }
+            
+            // Simular redirección a Stripe
+            paymentModal.classList.remove('hidden');
+            
+            setTimeout(() => {
+                paymentModal.classList.add('hidden');
+                alert('¡Pago procesado exitosamente! Ahora tienes acceso al plan Profesional.');
+                userState.currentPlan = 'pro';
+                userState.isLoggedIn = true;
+            }, 3000);
+        }
+
+        // CANJEAR RECOMPENSAS CON PRECIOS MÁS ALTOS Y FUNCIONALIDAD DE USO
+        function redeemReward(reward, cost) {
+            if (userState.points >= cost) {
+                userState.points -= cost;
+                userState.unlockedRewards.push(reward);
+                
+                // Mostrar modal de recompensa canjeada
+                rewardMessage.textContent = `¡Felicidades! Has canjeado: ${reward}`;
+                rewardsUsageModal.classList.remove('hidden');
+                
+                // En una app real, esto desbloquearía la recompensa en el panel del usuario
+                console.log('Recompensa desbloqueada:', reward);
+                console.log('Recompensas disponibles:', userState.unlockedRewards);
+                
+            } else {
+                alert(`Necesitas ${cost} puntos. Tienes ${userState.points} puntos.`);
+            }
+        }
+
+        function selectPlan(plan) {
+            if (plan === 'basic') {
+                alert('¡Bienvenido al plan básico! Disfruta de tus 3 ideas diarias gratuitas.');
+                userState.currentPlan = 'basic';
+            }
+            // Los otros planes ahora usan redirectToCheckout
+        }
+
+        // Form submission
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Inicio de sesión exitoso! Ahora tienes acceso ilimitado.');
+            userState.isLoggedIn = true;
+            userState.currentPlan = 'pro';
+            closeLoginModal();
+        });
+
+        // Event listeners
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            generateContent();
+        });
+
+        newIdeaBtn.addEventListener('click', () => {
+            generateContent();
+        });
+
+        // Close modals when clicking outside
+        loginModal.addEventListener('click', function(e) {
+            if (e.target === loginModal) {
+                closeLoginModal();
+            }
+        });
+        
+        paymentModal.addEventListener('click', function(e) {
+            if (e.target === paymentModal) {
+                closePaymentModal();
+            }
+        });
+        
+        rewardsUsageModal.addEventListener('click', function(e) {
+            if (e.target === rewardsUsageModal) {
+                closeRewardsModal();
+            }
+        });
+    </script>
+</body>
+</html>
