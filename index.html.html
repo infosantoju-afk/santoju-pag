@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santoju - Ideas Virales Profesionales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pink: {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            200: '#fbcfe8',
+                            300: '#f9a8d4',
+                            400: '#f472b6',
+                            500: '#ec4899',
+                            600: '#db2777',
+                        },
+                        blue: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                        },
+                        purple: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            200: '#ddd6fe',
+                            300: '#c4b5fd',
+                            400: '#a78bfa',
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #fdf2f8 0%, #eff6ff 50%, #f5f3ff 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #ec4899 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            transform: translateY(-2px);
+        }
+        .feature-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(236, 72, 153, 0.3);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .pricing-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .pricing-card:hover {
+            transform: scale(1.02);
+            border-color: rgba(139, 92, 246, 0.4);
+        }
+        .achievement-item {
+            animation: slideIn 0.5s ease-out;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-white/50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-sparkles text-pink-500 text-xl"></i>
+                    <span class="text-2xl font-bold gradient-text">Santoju</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#generator" class="nav-link text-gray-700 hover:text-pink-600 font-medium">Generador</a>
+                    <a href="#rewards" class="nav-link text-gray-700 hover:text-pink-600 font-medium">Recompensas</a>
+                    <a href="#pricing" class="nav-link text-gray-700 hover:text-pink-600 font-medium">Planes</a>
+                    <a href="#features" class="nav-link text-gray-700 hover:text-pink-600 font-medium">Características</a>
+                </div>
+                <button class="bg-gradient-to-r from-pink-500 to-blue-500 text-white px-6 py-2 rounded-full font-medium hover:from-pink-600 hover:to-blue-600 transition-all">
+                    Iniciar Sesión
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center mb-6">
+                <i class="fas fa-infinity text-pink-500 text-4xl mr-4"></i>
+                <h1 class="text-5xl md:text-7xl font-bold gradient-text">Ideas Virales Infinitas</h1>
+            </div>
+            <p class="text-xl text-gray-700 max-w-3xl mx-auto mb-8">
+                Transforma cualquier tema en contenido TikTok profesional. Ideas únicas, guiones detallados y estrategias de viralización.
+            </p>
+            <div class="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-2xl p-6 max-w-2xl mx-auto border border-yellow-200">
+                <div class="flex items-center justify-center space-x-3">
+                    <i class="fas fa-trophy text-yellow-600 text-2xl"></i>
+                    <div class="text-left">
+                        <h3 class="font-bold text-gray-800">¡Nuevo!</h3>
+                        <p class="text-gray-600 text-sm">Programa de recompensas: Gana premios reales por crear contenido</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Generator Section -->
+    <section id="generator" class="py-16 bg-white/50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Generador de Ideas Profesionales</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Ingresa cualquier tema y recibe ideas específicas, desarrolladas y listas para grabar
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-3xl p-8 shadow-xl border border-white/50">
+                    <form id="generator-form" class="space-y-6">
+                        <div>
+                            <label for="tema" class="block text-lg font-semibold text-gray-800 mb-3">
+                                ¿Sobre qué tema necesitas ideas?
+                            </label>
+                            <div class="relative">
+                                <input
+                                    type="text"
+                                    id="tema"
+                                    placeholder="Ej: recetas para estudiantes, rutinas de estudio, ejercicios en casa..."
+                                    class="w-full px-6 py-4 text-lg bg-white border-2 border-pink-200 rounded-2xl text-gray-800 placeholder-gray-500 focus:outline-none focus:border-pink-400 focus:ring-4 focus:ring-pink-100 transition-all duration-300"
+                                />
+                                <i class="fas fa-lightbulb absolute right-4 top-1/2 transform -translate-y-1/2 text-pink-400 text-lg"></i>
+                            </div>
+                            <p id="error-message" class="text-red-500 mt-2 font-medium hidden"></p>
+                        </div>
+                        
+                        <button
+                            type="submit"
+                            id="generate-btn"
+                            class="w-full bg-gradient-to-r from-pink-500 to-blue-500 hover:from-pink-600 hover:to-blue-600 text-white font-bold py-4 px-8 rounded-2xl text-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-3 shadow-lg"
+                        >
+                            <i class="fas fa-magic"></i>
+                            <span>Generar Ideas Profesionales</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Result Section -->
+                <div id="result-section" class="hidden mt-8">
+                    <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-3xl p-8 border border-green-200">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-2xl font-bold text-gray-800">✨ Ideas Generadas para: <span id="result-tema" class="text-pink-600"></span></h3>
+                            <button id="new-idea-btn" class="flex items-center space-x-2 text-green-600 hover:text-green-700 font-medium">
+                                <i class="fas fa-plus"></i>
+                                <span>Nueva idea</span>
+                            </button>
+                        </div>
+
+                        <div id="ideas-container" class="space-y-6">
+                            <!-- Ideas will be populated here -->
+                        </div>
+
+                        <div class="mt-8 p-4 bg-white/50 rounded-xl">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-coins text-yellow-600"></i>
+                                    <span class="font-semibold text-gray-800">+50 puntos de recompensa</span>
+                                </div>
+                                <span class="text-sm text-gray-600">¡Has ganado puntos por generar ideas!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Características Profesionales</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Todo lo que necesitas para crear contenido viral de alta calidad
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="feature-card bg-white rounded-2xl p-6 border border-white/50">
+                    <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-blue-500 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-film text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Guiones Detallados</h3>
+                    <p class="text-gray-600">Guiones paso a paso con tiempos exactos y diálogos específicos</p>
+                </div>
+
+                <div class="feature-card bg-white rounded-2xl p-6 border border-white/50">
+                    <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-hashtag text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Estrategia de Hashtags</h3>
+                    <p class="text-gray-600">Combinación óptima de hashtags trending y de nicho</p>
+                </div>
+
+                <div class="feature-card bg-white rounded-2xl p-6 border border-white/50">
+                    <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-green-500 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-camera text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Guía de Producción</h3>
+                    <p class="text-gray-600">Consejos profesionales de iluminación, audio y edición</p>
+                </div>
+
+                <div class="feature-card bg-white rounded-2xl p-6 border border-white/50">
+                    <div class="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-chart-line text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Análisis de Viralidad</h3>
+                    <p class="text-gray-600">Predicción de engagement y estrategia de publicación</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rewards Program Section -->
+    <section id="rewards" class="py-16 bg-gradient-to-r from-purple-50 to-pink-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">🏆 Programa de Recompensas</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Gana puntos por usar Santoju y canjea recompensas exclusivas
+                </p>
+            </div>
+
+            <div class="max-w-6xl mx-auto">
+                <!-- Points System -->
+                <div class="bg-white rounded-2xl p-8 mb-8 border border-purple-200">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Sistema de Puntos</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center p-4 bg-pink-50 rounded-xl">
+                            <div class="w-16 h-16 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-lightbulb text-white text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 mb-2">Generar Ideas</h4>
+                            <p class="text-gray-600">+50 puntos por idea generada</p>
+                        </div>
+                        <div class="text-center p-4 bg-blue-50 rounded-xl">
+                            <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-video text-white text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 mb-2">Publicar Contenido</h4>
+                            <p class="text-gray-600">+100 puntos por video publicado</p>
+                        </div>
+                        <div class="text-center p-4 bg-purple-50 rounded-xl">
+                            <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-crown text-white text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 mb-2">Viralización</h4>
+                            <p class="text-gray-600">+500 puntos por video viral</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rewards Catalog -->
+                <div class="bg-white rounded-2xl p-8 border border-purple-200">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Catálogo de Recompensas</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="achievement-item bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-4 border border-yellow-200 text-center">
+                            <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-gift text-white"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 mb-2">Plantillas Exclusivas</h4>
+                            <p class="text-sm text-gray-600 mb-2">100 puntos</p>
+                            <button class="text-xs bg-yellow-500 text-white px-3 py-1 rounded-full">Canjear</button>
+                        </div>
+                        <div class="achievement-item bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-4 border border-green-200 text-center">
+                            <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-chart-bar text-white"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 mb-2">Análisis Competencia</h4>
+                            <p class="text-sm text-gray-600 mb-2">250 puntos</p>
+                            <button class="text-xs bg-green-500 text-white px-3 py-1 rounded-full">Canjear</button>
+                        </div>
+                        <div class="achievement-item bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-4 border border-purple-200 text-center">
+                            <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-headset text-white"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 mb-2">Consultoría 1:1</h4>
+                            <p class="text-sm text-gray-600 mb-2">1000 puntos</p>
+                            <button class="text-xs bg-purple-500 text-white px-3 py-1 rounded-full">Canjear</button>
+                        </div>
+                        <div class="achievement-item bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-4 border border-blue-200 text-center">
+                            <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-certificate text-white"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 mb-2">Certificación Pro</h4>
+                            <p class="text-sm text-gray-600 mb-2">2000 puntos</p>
+                            <button class="text-xs bg-blue-500 text-white px-3 py-1 rounded-full">Canjear</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Planes de Suscripción</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Elige el plan perfecto para tus necesidades de creación de contenido
+                </p>
+            </div>
+
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Free Plan -->
+                    <div class="pricing-card bg-white rounded-2xl p-8 border border-gray-200">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Básico</h3>
+                            <div class="text-3xl font-bold text-gray-800">
+                                <span class="text-4xl">Gratis</span>
+                            </div>
+                            <p class="text-gray-600 mt-2">Para empezar</p>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span>3 ideas por día</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span>Guiones básicos</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span>Hashtags básicos</span>
+                            </li>
+                            <li class="flex items-center space-x-2 text-gray-400">
+                                <i class="fas fa-times"></i>
+                                <span>Guía de producción</span>
+                            </li>
+                            <li class="flex items-center space-x-2 text-gray-400">
+                                <i class="fas fa-times"></i>
+                                <span>Análisis de viralidad</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-gray-100 text-gray-800 py-3 rounded-xl font-medium hover:bg-gray-200 transition-colors">
+                            Empezar gratis
+                        </button>
+                    </div>
+
+                    <!-- Pro Plan -->
+                    <div class="pricing-card bg-gradient-to-r from-pink-500 to-blue-500 text-white rounded-2xl p-8 relative">
+                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-gray-900 px-4 py-1 rounded-full text-sm font-bold">
+                            MÁS POPULAR
+                        </div>
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold mb-2">Profesional</h3>
+                            <div class="text-3xl font-bold">
+                                <span class="text-4xl">10€</span>
+                                <span class="text-lg">/mes</span>
+                            </div>
+                            <p class="text-pink-100 mt-2">Para creadores serios</p>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check"></i>
+                                <span>Ideas ilimitadas</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check"></i>
+                                <span>Guiones profesionales</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check"></i>
+                                <span>Estrategia de hashtags avanzada</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check"></i>
+                                <span>Guía de producción completa</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check"></i>
+                                <span>Análisis de viralidad</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check"></i>
+                                <span>+50% puntos de recompensa</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-white text-pink-600 py-3 rounded-xl font-bold hover:bg-gray-100 transition-colors">
+                            Empezar ahora
+                        </button>
+                    </div>
+
+                    <!-- Enterprise Plan -->
+                    <div class="pricing-card bg-white rounded-2xl p-8 border border-gray-200">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Empresarial</h3>
+                            <div class="text-3xl font-bold text-gray-800">
+                                <span class="text-4xl">25€</span>
+                                <span class="text-lg">/mes</span>
+                            </div>
+                            <p class="text-gray-600 mt-2">Para agencias y equipos</p>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span>Todo lo del plan Profesional</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span>Hasta 5 usuarios</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span>Soporte prioritario</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span>API de integración</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span>Reportes personalizados</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span>+100% puntos de recompensa</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-gray-800 text-white py-3 rounded-xl font-medium hover:bg-gray-900 transition-colors">
+                            Contactar ventas
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-gray-900 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <div class="flex items-center justify-center mb-4">
+                    <i class="fas fa-sparkles text-pink-400 text-xl mr-3"></i>
+                    <span class="text-2xl font-bold">Santoju</span>
+                </div>
+                <p class="text-gray-400 mb-6">
+                    La plataforma definitiva para creadores de TikTok profesionales
+                </p>
+                <div class="flex justify-center space-x-6 text-gray-400">
+                    <a href="#" class="hover:text-white">Términos</a>
+                    <a href="#" class="hover:text-white">Privacidad</a>
+                    <a href="#" class="hover:text-white">Contacto</a>
+                    <a href="#" class="hover:text-white">Blog</a>
+                </div>
+                <p class="text-gray-500 mt-6 text-sm">
+                    © 2024 Santoju. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sistema de generación inteligente para CUALQUIER tema (mejorado)
+        class SmartIdeaGenerator {
+            constructor() {
+                // Palabras clave para detectar categorías y generar ideas relevantes
+                this.categoryKeywords = {
+                    food: ['comida', 'receta', 'cocina', 'cocinar', 'alimento', 'plato', 'menú', 'ingredientes', 'sabor', 'delicioso', 'horneado', 'freído', 'hervido', 'postre', 'desayuno', 'almuerzo', 'cena', 'estudiantes', 'rápido', 'fácil'],
+                    fitness: ['ejercicio', 'fitness', 'gym', 'entrenamiento', 'músculo', 'pesas', 'cardio', 'yoga', 'estiramiento', 'flexibilidad', 'fuerza', 'resistencia', 'deporte', 'activo', 'saludable', 'casa', 'sin equipo'],
+                    study: ['estudio', 'aprender', 'educación', 'examen', 'prueba', 'universidad', 'colegio', 'clase', 'conocimiento', 'memoria', 'concentración', 'productividad', 'tiempo', 'organización', 'método', 'técnica'],
+                    beauty: ['belleza', 'maquillaje', 'skincare', 'cuidado', 'piel', 'cabello', 'uñas', 'cosméticos', 'producto', 'rutina', 'glamour', 'estética', 'tratamiento', 'natural', 'orgánico'],
+                    money: ['dinero', 'finanzas', 'inversión', 'ahorro', 'presupuesto', 'negocio', 'emprendimiento', 'ingresos', 'gastos', 'riqueza', 'económico', 'financiero', 'bolsa', 'cripto', 'pasivo'],
+                    tech: ['tecnología', 'tech', 'programación', 'código', 'software', 'hardware', 'app', 'digital', 'internet', 'computadora', 'móvil', 'smartphone', 'IA', 'inteligencia artificial', 'automatización'],
+                    travel: ['viaje', 'viajar', 'turismo', 'destino', 'aventura', 'explorar', 'mundo', 'país', 'ciudad', 'vacaciones', 'hotel', 'avión', 'transporte', 'cultura', 'económico', 'barato'],
+                    pets: ['mascota', 'perro', 'gato', 'animal', 'cuidado', 'entrenamiento', 'jugar', 'alimentación', 'salud', 'veterinario', 'cachorro', 'gatito', 'acuario', 'aves', 'peces'],
+                    diy: ['manualidades', 'bricolaje', 'hazlo', 'creativo', 'arte', 'pintura', 'dibujo', 'craft', 'proyecto', 'construir', 'crear', 'diseñar', 'decoración', 'hogar', 'reciclaje']
+                };
+
+                // Plantillas de ideas que se adaptan dinámicamente al tema
+                this.ideaTemplates = {
+                    food: [
+                        {
+                            generate: (tema, words) => {
+                                const action = this.getRandom(['hacer', 'preparar', 'crear', 'cocinar', 'elaborar']);
+                                const time = this.getRandom(['5 minutos', '10 minutos', '15 minutos', '20 minutos', '30 minutos']);
+                                const difficulty = this.getRandom(['fácil', 'sencillo', 'rápido', 'simple', 'accesible']);
+                                const audience = this.getRandom(['estudiantes', 'personas ocupadas', 'principiantes', 'familias', 'solteros']);
+                                return {
+                                    title: `${this.capitalizeFirst(tema)} en solo ${time}`,
+                                    description: `Aprende a ${action} ${tema} de forma ${difficulty} y deliciosa. Perfecto para ${audience} que quieren comer bien sin complicaciones.`,
+                                    script: [
+                                        `0-2s: "¿Quieres ${tema} en solo ${time}?"`,
+                                        `3-7s: Muestra los ingredientes y el proceso paso a paso con tips profesionales`,
+                                        `8-12s: Resultado final impresionante con textura y sabor que hará agua tu boca`,
+                                        `13-15s: "¿Quieres más recetas así? ¡Sigue y guarda este video para siempre!"`
+                                    ],
+                                    hashtags: [`#${words[0] || 'comida'}`, '#recetasfaciles', '#cocinar', '#foodtiktok', '#delicioso', '#comidarapida']
+                                };
+                            }
+                        },
+                        {
+                            generate: (tema, words) => {
+                                const alternative = this.getRandom(['saludable', 'económico', 'vegetariano', 'sin gluten', 'vegano', 'bajo en calorías', 'proteico']);
+                                const benefit = this.getRandom(['sin sacrificar sabor', 'ahorrando dinero', 'cuidando tu salud', 'respetando el planeta']);
+                                return {
+                                    title: `Versión ${alternative} de ${tema}`,
+                                    description: `Cómo hacer ${tema} de forma ${alternative} ${benefit}. Ideal para quienes buscan ${this.getRandom(['dietas especiales', 'presupuestos ajustados', 'estilos de vida saludables', 'opciones sostenibles'])}.`,
+                                    script: [
+                                        `0-3s: "¿Te encanta ${tema} pero necesitas una versión ${alternative}?"`,
+                                        `4-8s: Compara ingredientes tradicionales vs ${alternative} con precios y beneficios`,
+                                        `9-12s: Proceso de preparación y resultado final que no creerás`,
+                                        `13-15s: "¡Delicioso, ${alternative} y ${benefit}! Guarda esta receta"`
+                                    ],
+                                    hashtags: [`#${words[0] || 'comida'}`, `#${alternative}`, '#saludable', '#recetassanas', '#alternativas', '#comidasana']
+                                };
+                            }
+                        },
+                        {
+                            generate: (tema, words) => {
+                                const tool = this.getRandom(['microondas', 'sartén', 'olla', 'batidora', 'horno']);
+                                const result = this.getRandom(['gourmet', 'profesional', 'de restaurante', 'impresionante']);
+                                return {
+                                    title: `${tema} ${result} con solo ${tool}`,
+                                    description: `Transforma ingredientes simples en ${tema} ${result} usando solo ${tool}. La técnica secreta que los chefs no quieren que sepas.`,
+                                    script: [
+                                        `0-2s: "¿Crees que necesitas equipo profesional para ${tema}?"`,
+                                        `3-7s: Muestra el ${tool} y los ingredientes básicos`,
+                                        `8-12s: Técnica secreta paso a paso con resultados sorprendentes`,
+                                        `13-15s: "¡Así de fácil es cocinar como un chef! ¿Quieres más trucos?"`
+                                    ],
+                                    hashtags: [`#${words[0] || 'cocina'}`, '#trucosdecocina', '#chefencasa', '#comidagourmet', '#cocinafacil']
+                                };
+                            }
+                        }
+                    ],
+                    fitness: [
+                        {
+                            generate: (tema, words) => {
+                                const equipment = this.getRandom(['sin equipo', 'con una silla', 'con una toalla', 'con una botella de agua', 'con una mochila']);
+                                const duration = this.getRandom(['7 minutos', '10 minutos', '15 minutos', '20 minutos']);
+                                const location = this.getRandom(['casa', 'oficina', 'hotel', 'viaje', 'espacio pequeño']);
+                                return {
+                                    title: `Rutina de ${tema} ${equipment}`,
+                                    description: `Entrena ${tema} efectivamente ${equipment} en solo ${duration}. Perfecto para ${location} cuando no tienes acceso a un gimnasio.`,
+                                    script: [
+                                        `0-2s: "No necesitas gimnasio para ${tema}"`,
+                                        `3-8s: Muestra los ejercicios uno por uno con buena forma y explicación`,
+                                        `9-12s: Secuencia completa en tiempo real con música motivadora`,
+                                        `13-15s: "¿Quieres más rutinas así? ¡Comenta SÍ y sigue para la semana completa!"`
+                                    ],
+                                    hashtags: [`#${words[0] || 'fitness'}`, '#ejercicioscasa', '#sinpesas', '#rutina', '#entrenamiento', '#fitnessencasa']
+                                };
+                            }
+                        },
+                        {
+                            generate: (tema, words) => {
+                                const goal = this.getRandom(['quemar grasa', 'ganar músculo', 'mejorar flexibilidad', 'aumentar energía', 'reducir estrés']);
+                                const timeframe = this.getRandom(['7 días', '14 días', '30 días', '2 semanas']);
+                                return {
+                                    title: `Desafío de ${tema} para ${goal} en ${timeframe}`,
+                                    description: `El plan definitivo de ${tema} para lograr ${goal} en solo ${timeframe}. Resultados reales y progresivos que puedes seguir desde casa.`,
+                                    script: [
+                                        `0-3s: "¿Quieres ${goal} con ${tema}?"`,
+                                        `4-8s: Explica el plan diario y los ejercicios clave`,
+                                        `9-12s: Muestra progreso visual y resultados esperados`,
+                                        `13-15s: "¡Empieza hoy y etiquétame en tus resultados!"`
+                                    ],
+                                    hashtags: [`#${words[0] || 'fitness'}`, '#desafio', '#resultados', '#progreso', '#metas', '#fitnessmotivation']
+                                };
+                            }
+                        }
+                    ],
+                    study: [
+                        {
+                            generate: (tema, words) => {
+                                const method = this.getRandom(['Pomodoro', 'Feynman', 'espaciado', 'activo', 'mnemotécnico']);
+                                const subject = words.length > 1 ? words.slice(1).join(' ') : 'cualquier materia';
+                                const benefit = this.getRandom(['aumenta tu retención', 'mejora tu comprensión', 'reduce tu tiempo de estudio', 'elimina la procrastinación']);
+                                return {
+                                    title: `Método ${method} para ${tema}`,
+                                    description: `Domina ${tema} usando la técnica ${method}. ${this.capitalizeFirst(benefit)} de ${subject} de forma científica y probada.`,
+                                    script: [
+                                        `0-3s: "Estudiando horas y no aprendes ${tema}?"`,
+                                        `4-8s: Explica paso a paso el método ${method} con ejemplos prácticos`,
+                                        `9-12s: Ejemplo aplicado a ${subject} con resultados visibles`,
+                                        `13-15s: "Guarda esto para tu próximo examen y sigue para más métodos"`
+                                    ],
+                                    hashtags: [`#${words[0] || 'estudio'}`, '#metododeestudio', '#aprender', '#estudiantes', '#productividad', '#educacion']
+                                };
+                            }
+                        },
+                        {
+                            generate: (tema, words) => {
+                                const time = this.getRandom(['mañana', 'tarde', 'noche', 'antes del examen']);
+                                const result = this.getRandom(['mejores notas', 'menos estrés', 'más confianza', 'aprobado seguro']);
+                                return {
+                                    title: `Rutina de ${tema} para ${time}`,
+                                    description: `La rutina perfecta de ${tema} para ${time} que te garantiza ${result}. Optimizada para tu ritmo circadiano y máxima eficiencia.`,
+                                    script: [
+                                        `0-2s: "¿Estudias en ${time} y no rindes?"`,
+                                        `3-7s: Muestra la rutina paso a paso con tiempos exactos`,
+                                        `8-12s: Beneficios científicos y resultados esperados`,
+                                        `13-15s: "Prueba esto durante 3 días y verás la diferencia"`
+                                    ],
+                                    hashtags: [`#${words[0] || 'estudio'}`, '#rutina', '#productividad', '#estudiantes', '#aprender', '#examen']
+                                };
+                            }
+                        }
+                    ],
+                    beauty: [
+                        {
+                            generate: (tema, words) => {
+                                const approach = this.getRandom(['natural', 'económico', 'profesional', 'casero']);
+                                const ingredient = this.getRandom(['ingredientes de cocina', 'productos básicos', 'lo que tienes en casa', 'ingredientes naturales']);
+                                return {
+                                    title: `Rutina ${approach} de ${tema}`,
+                                    description: `Cómo lograr resultados profesionales en ${tema} usando solo ${ingredient}. La rutina que los dermatólogos recomiendan pero nadie comparte.`,
+                                    script: [
+                                        `0-3s: "¿Cansada de gastar en ${tema}?"`,
+                                        `4-8s: Muestra los ${ingredient} y el paso a paso`,
+                                        `9-12s: Resultados antes/después impresionantes`,
+                                        `13-15s: "¡Así de fácil y económico es cuidarte! Guarda esto"`
+                                    ],
+                                    hashtags: [`#${words[0] || 'belleza'}`, `#${approach}`, '#rutinabasica', '#cuidadopersonal', '#bellezanatural', '#skincare']
+                                };
+                            }
+                        }
+                    ],
+                    money: [
+                        {
+                            generate: (tema, words) => {
+                                const amount = this.getRandom(['100€', '500€', '1000€', 'dinero extra']);
+                                const timeframe = this.getRandom(['este mes', '30 días', 'una semana', 'hoy mismo']);
+                                return {
+                                    title: `Cómo ganar ${amount} con ${tema} en ${timeframe}`,
+                                    description: `Estrategias prácticas y legales para generar ${amount} usando ${tema} en solo ${timeframe}. Sin estafas, sin riesgos, resultados reales.`,
+                                    script: [
+                                        `0-2s: "¿Quieres ganar ${amount} este mes?"`,
+                                        `3-8s: Explica las 3 estrategias principales paso a paso`,
+                                        `9-12s: Ejemplos reales y expectativas realistas`,
+                                        `13-15s: "Empieza hoy y comenta 'QUIERO' para el tutorial completo"`
+                                    ],
+                                    hashtags: [`#${words[0] || 'dinero'}`, '#finanzas', '#ingresospasivos', '#emprendimiento', '#metasfinancieras', '#riqueza']
+                                };
+                            }
+                        }
+                    ],
+                    default: [
+                        {
+                            generate: (tema, words) => {
+                                const approach = this.getRandom(['definitiva', 'secreta', 'profesional', 'revolucionaria', 'completa']);
+                                const promise = this.getRandom(['en 60 segundos', 'sin experiencia previa', 'desde cero', 'como un experto']);
+                                return {
+                                    title: `Guía ${approach} para ${tema}`,
+                                    description: `Todo lo que necesitas saber sobre ${tema} ${promise}. Desde lo básico hasta los trucos que los expertos no comparten públicamente.`,
+                                    script: [
+                                        `0-3s: "¿Cansado de información incompleta sobre ${tema}?"`,
+                                        `4-8s: Explicación estructurada paso a paso con ejemplos visuales`,
+                                        `9-12s: Consejos profesionales, errores comunes y soluciones`,
+                                        `13-15s: "¿Quieres profundizar más? ¡Sigue para contenido exclusivo y avanzado!"`
+                                    ],
+                                    hashtags: [`#${words[0] || 'tips'}`, '#tutorial', '#guia', '#aprender', '#experto', '#conocimiento']
+                                };
+                            }
+                        },
+                        {
+                            generate: (tema, words) => {
+                                const mistakes = this.getRandom(['3 errores fatales', '5 errores comunes', 'errores que arruinan', 'errores del 95%']);
+                                const consequence = this.getRandom(['y cómo evitarlos', 'y soluciones simples', 'y qué hacer en su lugar', 'que puedes corregir hoy']);
+                                return {
+                                    title: `${mistakes} en ${tema} ${consequence}`,
+                                    description: `Los errores que el 95% comete al empezar con ${tema}, y las soluciones simples que los expertos usan para tener éxito inmediato.`,
+                                    script: [
+                                        `0-2s: "¿Haciendo esto con ${tema}?"`,
+                                        `3-7s: Muestra cada error con ejemplos visuales y consecuencias`,
+                                        `8-11s: Revela las soluciones correctas paso a paso con demostración`,
+                                        `12-15s: "Guarda esto antes de que sea demasiado tarde y comentes los mismos errores"`
+                                    ],
+                                    hashtags: [`#${words[0] || 'consejos'}`, '#errores', '#aprender', '#mejorar', '#experiencia', '#lecciones']
+                                };
+                            }
+                        },
+                        {
+                            generate: (tema, words) => {
+                                const transformation = this.getRandom(['antes/después', 'progreso real', 'resultados honestos', 'transformación completa']);
+                                const timeframe = this.getRandom(['30 días', '2 semanas', '1 mes', '60 días', 'una semana']);
+                                return {
+                                    title: `Mi ${transformation} con ${tema} en ${timeframe}`,
+                                    description: `Mi experiencia real aplicando ${tema} durante ${timeframe}. Resultados honestos, desafíos reales y lecciones aprendidas que nadie más te contará.`,
+                                    script: [
+                                        `0-3s: "Así era mi vida antes de ${tema}..."`,
+                                        `4-8s: El proceso de implementación, errores y ajustes`,
+                                        `9-12s: Resultados reales con comparación visual honesta`,
+                                        `13-15s: "¿Vale la pena? Te cuento todo en mi próximo video - ¡Sigue para no perdértelo!"`
+                                    ],
+                                    hashtags: [`#${words[0] || 'experiencia'}`, '#resultados', '#progreso', '#real', '#honesto', '#transformacion']
+                                };
+                            }
+                        },
+                        {
+                            generate: (tema, words) => {
+                                const format = this.getRandom(['en 60 segundos', 'express', 'ultra rápido', 'lightning']);
+                                const benefit = this.getRandom(['sin complicaciones', 'para principiantes', 'sin experiencia', 'fácil de entender']);
+                                return {
+                                    title: `${tema} ${format}: Todo lo esencial`,
+                                    description: `Lo más importante sobre ${tema} explicado ${format} y ${benef}. Perfecto para quienes quieren aprender rápido sin perder tiempo.`,
+                                    script: [
+                                        `0-2s: "¿Quieres entender ${tema} en 60 segundos?"`,
+                                        `3-8s: Información clave presentada de forma visual y dinámica`,
+                                        `9-12s: Resumen de puntos esenciales con ejemplos prácticos`,
+                                        `13-15s: "¡Ya sabes lo esencial! ¿Quieres la versión completa? Comenta SÍ"`
+                                    ],
+                                    hashtags: [`#${words[0] || 'aprender'}`, '#express', '#rapido', '#esencial', '#basico', '#tutorial']
+                                };
+                            }
+                        }
+                    ]
+                };
+            }
+
+            // Analizar el tema para determinar categoría
+            analyzeTopic(tema) {
+                const lowerTema = tema.toLowerCase();
+                const words = lowerTema.split(' ').filter(word => word.length > 2);
+                
+                // Buscar coincidencias con palabras clave de categorías
+                let bestCategory = 'default';
+                let bestScore = 0;
+                let detectedWords = [];
+                
+                for (const [category, keywords] of Object.entries(this.categoryKeywords)) {
+                    const matches = words.filter(word => 
+                        keywords.some(keyword => 
+                            keyword.includes(word) || word.includes(keyword)
+                        )
+                    );
+                    if (matches.length > bestScore) {
+                        bestScore = matches.length;
+                        bestCategory = category;
+                        detectedWords = matches;
+                    }
+                }
+                
+                return { category: bestCategory, words, matches: detectedWords, confidence: bestScore };
+            }
+
+            // Generar ideas específicas para el tema
+            generateIdeas(tema) {
+                const analysis = this.analyzeTopic(tema);
+                const templates = this.ideaTemplates[analysis.category] || this.ideaTemplates.default;
+                
+                // Generar múltiples ideas usando diferentes plantillas
+                const ideas = [];
+                const numIdeas = Math.min(templates.length, 3);
+                
+                for (let i = 0; i < numIdeas; i++) {
+                    const template = templates[i];
+                    if (template && template.generate) {
+                        try {
+                            const idea = template.generate(tema, analysis.words);
+                            ideas.push(idea);
+                        } catch (error) {
+                            console.warn('Error generating idea:', error);
+                            // Fallback a plantilla default
+                            const fallback = this.ideaTemplates.default[0].generate(tema, analysis.words);
+                            ideas.push(fallback);
+                        }
+                    }
+                }
+                
+                return {
+                    ideas,
+                    analysis: {
+                        category: analysis.category,
+                        confidence: analysis.confidence,
+                        detectedWords: analysis.matches
+                    }
+                };
+            }
+
+            // Funciones auxiliares
+            getRandom(array) {
+                return array[Math.floor(Math.random() * array.length)];
+            }
+
+            capitalizeFirst(string) {
+                return string.charAt(0).toUpperCase() + string.slice(1);
+            }
+        }
+
+        // Initialize generator
+        const generator = new SmartIdeaGenerator();
+
+        // DOM Elements
+        const form = document.getElementById('generator-form');
+        const temaInput = document.getElementById('tema');
+        const generateBtn = document.getElementById('generate-btn');
+        const errorMessage = document.getElementById('error-message');
+        const inputSection = document.getElementById('input-section');
+        const resultSection = document.getElementById('result-section');
+        const newIdeaBtn = document.getElementById('new-idea-btn');
+        const resultTema = document.getElementById('result-tema');
+        const ideasContainer = document.getElementById('ideas-container');
+
+        // Generate content
+        function generateContent() {
+            const tema = temaInput.value.trim();
+            
+            if (!tema) {
+                errorMessage.textContent = 'Por favor ingresa un tema';
+                errorMessage.classList.remove('hidden');
+                return;
+            }
+            
+            errorMessage.classList.add('hidden');
+            generateBtn.disabled = true;
+            generateBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generando ideas...';
+            
+            setTimeout(() => {
+                try {
+                    const result = generator.generateIdeas(tema);
+                    displayResult(tema, result);
+                } catch (error) {
+                    console.error('Error generating content:', error);
+                    errorMessage.textContent = 'Error al generar las ideas. Intenta con otro tema.';
+                    errorMessage.classList.remove('hidden');
+                }
+                
+                generateBtn.disabled = false;
+                generateBtn.innerHTML = '<i class="fas fa-magic"></i> Generar Ideas Profesionales';
+            }, 2000);
+        }
+
+        // Display result
+        function displayResult(tema, result) {
+            resultTema.textContent = tema;
+            
+            ideasContainer.innerHTML = '';
+            result.ideas.forEach((idea, index) => {
+                const ideaDiv = document.createElement('div');
+                ideaDiv.className = 'bg-white rounded-2xl p-6 border border-gray-200';
+                ideaDiv.innerHTML = `
+                    <div class="flex items-start space-x-4">
+                        <div class="w-8 h-8 bg-gradient-to-r from-pink-500 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                            <span class="text-white font-bold text-sm">${index + 1}</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">${idea.title}</h4>
+                            <p class="text-gray-700 mb-4">${idea.description}</p>
+                            
+                            <div class="mb-4">
+                                <h5 class="font-semibold text-gray-800 mb-2">📜 Guion sugerido:</h5>
+                                <div class="space-y-2">
+                                    ${idea.script.map(step => `
+                                        <div class="flex items-start space-x-2">
+                                            <span class="w-2 h-2 bg-pink-500 rounded-full mt-2"></span>
+                                            <p class="text-gray-600 text-sm">${step}</p>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h5 class="font-semibold text-gray-800 mb-2">📌 Hashtags recomendados:</h5>
+                                <div class="flex flex-wrap gap-2">
+                                    ${idea.hashtags.map(tag => `
+                                        <span class="px-2 py-1 bg-pink-100 text-pink-800 rounded-full text-sm">${tag}</span>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                ideasContainer.appendChild(ideaDiv);
+            });
+            
+            resultSection.classList.remove('hidden');
+        }
+
+        // Event listeners
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            generateContent();
+        });
+
+        newIdeaBtn.addEventListener('click', () => {
+            generateContent();
+        });
+    </script>
+</body>
+</html>
